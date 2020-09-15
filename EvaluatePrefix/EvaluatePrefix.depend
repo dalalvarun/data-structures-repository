@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1594060607 source:e:\working repository\evaluateprefix\main.c
+	<stdlib.h>
+	<stdio.h>
+	<malloc.h>
+	<string.h>
+	<ctype.h>
+

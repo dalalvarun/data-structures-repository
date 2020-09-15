@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1591906217 source:d:\ds_rt\multiple_stack\main.c
+	<stdio.h>
+	<stdlib.h>
+

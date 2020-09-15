@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1591483616 source:d:\ds_rt\linked_list\main.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<malloc.h>
+

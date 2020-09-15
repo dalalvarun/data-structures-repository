@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1593438246 source:e:\working repository\parenthesis_checker\main.c
+	<stdio.h>
+	<stdlib.h>
+

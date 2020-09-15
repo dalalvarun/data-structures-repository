@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1594037716 source:e:\working repository\infixtoprefix_lite\main.c
+	<stdio.h>
+	<stdlib.h>
+	<malloc.h>
+	<string.h>
+	<ctype.h>
+

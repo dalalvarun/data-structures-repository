@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1591525160 source:d:\ds_rt\circularll\main.c
+	<stdio.h>
+	<stdlib.h>
+	<malloc.h>
+

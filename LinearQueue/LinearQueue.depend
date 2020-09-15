@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1596561670 source:e:\working repository\linearqueue\main.c
+	<stdio.h>
+	<stdlib.h>
+
