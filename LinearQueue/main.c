@@ -5,89 +5,96 @@
 int queue[MAX];
 int FRONT=-1, REAR =-1;
 
-void enqueue(int x)
+void enqueue()
 {
-    if(REAR = MAX-1)
-    {
 
-        printf("Overflow!!!");
-        return;
-    }
-    else if(FRONT == -1 && REAR ==-1)
+    if(REAR == MAX-1)
     {
-        FRONT++;
-        REAR++;
+        printf("\nOverflow!!!");
     }
     else
     {
+
+        if(FRONT==-1)
+        {
+            FRONT++;
+        }
         REAR++;
+        int temp;
+        printf("\nEnter the element to enter:");
+        scanf("%i",&temp);
+        queue[REAR] = temp;
+        printf("\nThe element was inserted successfully!!!");
     }
-    queue[REAR] = x;
-    return;
 }
 
 void dequeue()
 {
-    if(FRONT ==-1 || FRONT>REAR)
+    if(FRONT==-1 && REAR ==-1)
     {
-        printf("\nUnderflow!!!");
+        printf("\nUnderflow!!!!");
+    }
+    else if(FRONT==REAR)
+    {
+        FRONT=-1;
+        REAR=-1;
+        printf("\nElement removed successfully!!!");
     }
     else
     {
 
         FRONT++;
+        printf("\nElement removed successfully!!!");
     }
-    return;
 }
 
 void peek()
 {
-    if(REAR==-1)
-    {
-        printf("\nUnderflow");
-    }
+    if(FRONT== -1)
+        printf("\nThe Queue is empty!!!");
     else
     {
-        printf("%d",queue[REAR]);
+        printf("\nPeek: %i", queue[FRONT]);
     }
 }
 
 void display()
 {
-    if(REAR == -1 || FRONT>REAR)
+
+    if(FRONT==-1 && REAR ==-1)
     {
-        printf("\nUnderflow");
+
+        printf("\nThe Queue is empty!!!");
     }
     else
     {
         printf("\nThe Queue is as follows:\n");
-        for(int i=FRONT;i<=REAR;i++)
+        for(int i=FRONT; i<=REAR;i++)
         {
-            printf("%d ",queue[i]);
+
+            printf(" %i",queue[i]);
         }
     }
 }
 
 int main()
 {
-    int choice;
-    int val;
+    int decision;
     do
     {
-        printf("\n************MAIN MENU***************");
-        printf("\n1.Insert an Element");
-        printf("\n2.Delete an Element");
-        printf("\n3.Peek");
-        printf("\n4.Display");
-        printf("\n5.EXIT");
-        printf("\nEnter your choice:");
-        scanf("%d",&choice);
-        switch(choice)
+
+        printf("\n*********MAIN MENU********");
+        printf("\n 1.Insert an Element in the Queue");
+        printf("\n 2.Delete an Element in the Queue");
+        printf("\n 3.Peek first element");
+        printf("\n 4.Display the Queue");
+        printf("\n.5.Exit");
+        printf("\n Enter your choice:");
+        scanf("%i",&decision);
+        switch(decision)
         {
             case 1:
-                printf("\nEnter the element to be inserted:");
-                scanf("%d",&val);
-                enqueue(val);
+                enqueue();
                 break;
             case 2:
                 dequeue();
@@ -98,8 +105,7 @@ int main()
             case 4:
                 display();
                 break;
-
         }
-
-    }while(choice!=5);
+    }
+    while(decision!=5);
 }

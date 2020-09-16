@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1600278988 source:d:\data structures repo\queue(linked representation)\main.c
+	<stdio.h>
+	<malloc.h>
+	<stdlib.h>
+
