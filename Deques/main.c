@@ -108,7 +108,7 @@ void display()
         printf("\nThe queue is as follows:\n");
         if(front<=rear)
         {
-            for(int i=front;i<=rear;i++)
+            for(int i= front;i<=rear;i++)
             {
                 printf("%i ", queue[i]);
             }
