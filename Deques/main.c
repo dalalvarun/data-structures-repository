@@ -16,6 +16,7 @@ void enqueue_right()
     {
         int el;
         printf("\nEnter the element you want to enter:");
+
         scanf("%i",&el);
         if(front==-1 && rear == -1)
         {
@@ -63,7 +64,11 @@ void dequeue_left()
 {
     if(front==-1 && rear ==-1)
     {
+<<<<<<< HEAD
         printf("\nUnderflow!!!");
+=======
+        printf("\nUndeflow!!!");
+>>>>>>> 9c6a159e13af88f445e6c83c4db04ef3322af9dc
         return;
     }
     else if(front == rear)
@@ -108,7 +113,11 @@ void display()
         printf("\nThe queue is as follows:\n");
         if(front<=rear)
         {
+<<<<<<< HEAD
             for(int i= front;i<=rear;i++)
+=======
+            for(int i=front;i<=rear;i++)
+>>>>>>> 9c6a159e13af88f445e6c83c4db04ef3322af9dc
             {
                 printf("%i ", queue[i]);
             }
