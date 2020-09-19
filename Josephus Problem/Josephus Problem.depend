@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1600479210 source:d:\data structures repo\data-structures-repository\josephus problem\main.c
+	<stdio.h>
+	<conio.h>
+	<malloc.h>
+
