@@ -1,0 +1,133 @@
+// some declarations
+    struct node *parent, *child;
+    child = parent = tree;
+    bool doesnt_exist = false;
+
+    // finding the node to be deleted and its corresponding parent
+    while(child->data!=val)
+    {
+        parent = child;
+        if(val < child->data)
+            child = child->left;
+        else
+            child = child->right;
+
+        if(child==NULL)
+        {
+            doesnt_exist = true;
+            break;
+        }
+    }
+
+    // if no node exists, print not found
+    if(doesnt_exist)
+    {
+        printf("\nThe node does not exist in the BST.");
+        return tree;
+    }
+    // if node exists
+    else
+    {
+        //if parent node is to be deleted
+        if(child==parent)
+        {
+            //if only parent node exists in the tree
+            if(child->left == NULL && child->right == NULL)
+            {
+                free(child);
+                tree = NULL;
+                return tree;
+            }
+            // deleting the parent node and replacing it by left-subtree's highest element
+            struct node *temp = tree->left;
+            struct node *pre_temp = tree->left;
+            //searching for left subtree's max element and its parent
+            while(temp->right!=NULL)
+            {
+                pre_temp = temp;
+                temp = temp->right;
+            }
+
+            //changing the deleted node's value with left subtree's highest element
+            child->data = temp->data;
+
+            //making the ex-position of changed element point to null
+            if(pre_temp->right == temp)
+            {
+                pre_temp->right = NULL;
+            }
+            else
+            {
+                pre_temp->left = NULL;
+            }
+            //freeing the ex-position of changed element.
+            free(temp);
+
+        }
+        else
+        {
+            // if the node to be deleted has 2 nodes
+            if(child->left && child->right)
+            {
+                //some declarations
+                struct node *temp = child->left;
+                struct node *pretemp = child;
+
+                //browsing to the maximum node on left subtree
+                while(temp->right!=NULL)
+                {
+                    pretemp = temp;
+                    temp = temp->right;
+                }
+
+                //exchanging left subtree's max with element to be deleted
+                child->data = temp->data;
+
+                //making the temp's parent point to null
+                if(pretemp->left == temp)
+                    pretemp->left = NULL;
+                else
+                    pretemp->right = NULL;
+                //freeing temp;
+                free(temp);
+            }
+            //if the node to be deleted has only right node
+            else if(child->left == NULL && child->right)
+            {
+                if(parent->left==child)
+                {
+                    parent->left = child->right;
+                }
+                else
+                {
+                    parent->right = child->right;
+                }
+                free(child);
+                return tree;
+            }
+            // if the node to be deleted has only left node
+            else if(child->right==NULL && child->left)
+            {
+                if(parent->left==child)
+                {
+                    parent->left = child->left;
+                }
+                else
+                {
+                    parent->right = child->left;
+                }
+                free(child);
+                return tree;
+            }
+            //if the node to be deleted has no children
+            else
+            {
+                if(parent->left == child)
+                    parent->left = NULL;
+                else
+                    parent->right = NULL;
+                free(child);
+                return tree;
+            }
+        }
+    }
